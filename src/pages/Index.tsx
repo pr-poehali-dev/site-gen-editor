@@ -315,50 +315,70 @@ export default function Index() {
       </section>
 
       {/* Documentation Section */}
-      <section id="docs" className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
+      <section id="docs" className="py-20 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
+        <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">Документация</Badge>
             <h2 className="text-4xl font-bold mb-4">Быстрый старт</h2>
             <p className="text-lg text-muted-foreground">
-              Три простых шага до вашего первого сайта
+              От идеи до готового сайта за три простых шага
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-primary">1</span>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="relative border-2 hover:shadow-xl transition-all hover:scale-105">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <span className="text-xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Опишите идею</h3>
-              <p className="text-muted-foreground">
-                Введите описание сайта простыми словами — что должно быть на сайте
-              </p>
-            </div>
+              <CardHeader className="pt-8">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon name="MessageSquare" size={28} className="text-primary" />
+                </div>
+                <CardTitle>Опишите идею</CardTitle>
+                <CardDescription className="text-base">
+                  Напишите, какой сайт вам нужен — ИИ поймёт вас с полуслова и создаст структуру
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-primary">2</span>
+            <Card className="relative border-2 hover:shadow-xl transition-all hover:scale-105">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <span className="text-xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Отредактируйте</h3>
-              <p className="text-muted-foreground">
-                Используйте визуальный редактор для точной настройки элементов
-              </p>
-            </div>
+              <CardHeader className="pt-8">
+                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+                  <Icon name="MousePointerClick" size={28} className="text-secondary" />
+                </div>
+                <CardTitle>Настройте детали</CardTitle>
+                <CardDescription className="text-base">
+                  Кликайте на элементы и изменяйте их — цвета, тексты, изображения без единой строки кода
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-primary">3</span>
+            <Card className="relative border-2 hover:shadow-xl transition-all hover:scale-105">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <span className="text-xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Опубликуйте</h3>
-              <p className="text-muted-foreground">
-                Нажмите кнопку публикации — ваш сайт готов и доступен в интернете
-              </p>
-            </div>
+              <CardHeader className="pt-8">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon name="Globe" size={28} className="text-accent" />
+                </div>
+                <CardTitle>Выведите в свет</CardTitle>
+                <CardDescription className="text-base">
+                  Один клик — и ваш сайт уже в интернете с SSL-сертификатом и быстрым хостингом
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </div>
 
-          <div className="mt-12 text-center">
-            <Button size="lg" variant="outline">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" className="px-8">
+              <Icon name="Rocket" size={18} className="mr-2" />
+              Создать первый сайт
+            </Button>
+            <Button size="lg" variant="outline" className="px-8">
               <Icon name="BookOpen" size={18} className="mr-2" />
               Полная документация
             </Button>
