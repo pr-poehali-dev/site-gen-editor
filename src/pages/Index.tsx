@@ -327,45 +327,45 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="relative border-2 hover:shadow-xl transition-all hover:scale-105">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+            <Card className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
                 <span className="text-xl font-bold text-white">1</span>
               </div>
-              <CardHeader className="pt-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <Icon name="MessageSquare" size={28} className="text-primary" />
+              <CardHeader className="pt-8 transition-all duration-500 group-hover:translate-y-[-4px]">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/20">
+                  <Icon name="MessageSquare" size={28} className="text-primary transition-all duration-500 group-hover:scale-110" />
                 </div>
-                <CardTitle>Опишите идею</CardTitle>
+                <CardTitle className="transition-colors group-hover:text-primary">Опишите идею</CardTitle>
                 <CardDescription className="text-base">
                   Напишите, какой сайт вам нужен — ИИ поймёт вас с полуслова и создаст структуру
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="relative border-2 hover:shadow-xl transition-all hover:scale-105">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+            <Card className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
                 <span className="text-xl font-bold text-white">2</span>
               </div>
-              <CardHeader className="pt-8">
-                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
-                  <Icon name="MousePointerClick" size={28} className="text-secondary" />
+              <CardHeader className="pt-8 transition-all duration-500 group-hover:translate-y-[-4px]">
+                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-secondary/20">
+                  <Icon name="MousePointerClick" size={28} className="text-secondary transition-all duration-500 group-hover:scale-110" />
                 </div>
-                <CardTitle>Настройте детали</CardTitle>
+                <CardTitle className="transition-colors group-hover:text-secondary">Настройте детали</CardTitle>
                 <CardDescription className="text-base">
                   Кликайте на элементы и изменяйте их — цвета, тексты, изображения без единой строки кода
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="relative border-2 hover:shadow-xl transition-all hover:scale-105">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+            <Card className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
                 <span className="text-xl font-bold text-white">3</span>
               </div>
-              <CardHeader className="pt-8">
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-                  <Icon name="Globe" size={28} className="text-accent" />
+              <CardHeader className="pt-8 transition-all duration-500 group-hover:translate-y-[-4px]">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20">
+                  <Icon name="Globe" size={28} className="text-accent transition-all duration-500 group-hover:scale-110" />
                 </div>
-                <CardTitle>Выведите в свет</CardTitle>
+                <CardTitle className="transition-colors group-hover:text-accent">Выведите в свет</CardTitle>
                 <CardDescription className="text-base">
                   Один клик — и ваш сайт уже в интернете с SSL-сертификатом и быстрым хостингом
                 </CardDescription>
