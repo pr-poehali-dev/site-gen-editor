@@ -4,10 +4,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const [email, setEmail] = useState("");
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -327,13 +336,20 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+            <Card 
+              className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" 
+              style={{ 
+                animationDelay: '0.1s',
+                transform: `translateY(${scrollY * 0.05}px)`
+              }}
+            >
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-pulse">
                 <span className="text-xl font-bold text-white">1</span>
               </div>
               <CardHeader className="pt-8 transition-all duration-500 group-hover:translate-y-[-4px]">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/20">
-                  <Icon name="MessageSquare" size={28} className="text-primary transition-all duration-500 group-hover:scale-110" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/20 relative">
+                  <div className="absolute inset-0 rounded-xl bg-primary/20 animate-ping opacity-75"></div>
+                  <Icon name="MessageSquare" size={28} className="text-primary transition-all duration-500 group-hover:scale-110 relative z-10" />
                 </div>
                 <CardTitle className="transition-colors group-hover:text-primary">Опишите идею</CardTitle>
                 <CardDescription className="text-base">
@@ -342,13 +358,20 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+            <Card 
+              className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" 
+              style={{ 
+                animationDelay: '0.3s',
+                transform: `translateY(${scrollY * 0.03}px)`
+              }}
+            >
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-pulse" style={{ animationDelay: '0.2s' }}>
                 <span className="text-xl font-bold text-white">2</span>
               </div>
               <CardHeader className="pt-8 transition-all duration-500 group-hover:translate-y-[-4px]">
-                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-secondary/20">
-                  <Icon name="MousePointerClick" size={28} className="text-secondary transition-all duration-500 group-hover:scale-110" />
+                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-secondary/20 relative">
+                  <div className="absolute inset-0 rounded-xl bg-secondary/20 animate-ping opacity-75" style={{ animationDelay: '0.2s' }}></div>
+                  <Icon name="MousePointerClick" size={28} className="text-secondary transition-all duration-500 group-hover:scale-110 relative z-10" />
                 </div>
                 <CardTitle className="transition-colors group-hover:text-secondary">Настройте детали</CardTitle>
                 <CardDescription className="text-base">
@@ -357,13 +380,20 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+            <Card 
+              className="relative border-2 hover:shadow-xl transition-all group animate-fade-in" 
+              style={{ 
+                animationDelay: '0.5s',
+                transform: `translateY(${scrollY * 0.07}px)`
+              }}
+            >
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-pulse" style={{ animationDelay: '0.4s' }}>
                 <span className="text-xl font-bold text-white">3</span>
               </div>
               <CardHeader className="pt-8 transition-all duration-500 group-hover:translate-y-[-4px]">
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20">
-                  <Icon name="Globe" size={28} className="text-accent transition-all duration-500 group-hover:scale-110" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20 relative">
+                  <div className="absolute inset-0 rounded-xl bg-accent/20 animate-ping opacity-75" style={{ animationDelay: '0.4s' }}></div>
+                  <Icon name="Globe" size={28} className="text-accent transition-all duration-500 group-hover:scale-110 relative z-10" />
                 </div>
                 <CardTitle className="transition-colors group-hover:text-accent">Выведите в свет</CardTitle>
                 <CardDescription className="text-base">
